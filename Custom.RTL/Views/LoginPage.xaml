@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Custom.RTL.Views.LoginPage"  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true" BackgroundColor="White">
+    <ContentPage.Content>
+         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+         <Grid.RowDefinitions>
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+           <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+       <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Padding="0,20,0,0">
+                <Label Text="{Binding Language[Language]}" TextColor="#fc453a"  FontSize="14">
+                    <Label.GestureRecognizers>
+                          <TapGestureRecognizer
+                          Command="{Binding ChangeLanguageCommand}"/>
+                        </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+         <StackLayout  Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+          <Image x:Name="ImageLogo" Source="journey" Opacity="1" IsOpaque="true"  WidthRequest="50" HeightRequest="50"  />
+          <Label TextColor="White" VerticalTextAlignment="Center" Text="EServices" FontSize="18"/>
+          </StackLayout>
+        
+            <Grid Grid.Row="3" Grid.Column="1">
+               <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            <!--<Uc:FloatingText NamedFontSize="Medium" FontSizeFactor="1" AccentColor="White" Color="White" Placeholder="Email" Keyboard="Email" Text="{Binding UserName}" x:Name="usernameEntry" /> 
+            <Uc:FloatingText Grid.Row="1" NamedFontSize="Medium" FontSizeFactor="1" Color="White" Placeholder="Password" AccentColor="White" Text="{Binding UserPassword}" x:Name="passwordEntry" IsPassword="true"  />-->
+                <Entry     Placeholder="{Binding Language[UserName]}" Keyboard="Email" Text="{Binding UserName}" x:Name="usernameEntry" /> 
+            <Entry Grid.Row="1"    Placeholder="{Binding Language[Password]}"  Text="{Binding UserPassword}" x:Name="passwordEntry" IsPassword="true"  />
+             <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                 <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                     <StackLayout.GestureRecognizers>
+                          <TapGestureRecognizer
+                          Command="{Binding RememberMeCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                <Button Image="{Binding RememberMeImage, Mode=TwoWay}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" WidthRequest="25" HeightRequest="25" Command="{Binding RememberMeCommand}"  BorderColor="Gray"  />
+                <Label TextColor="#a2a2a2" VerticalTextAlignment="Start" Text="{Binding Language[RememberMe]}" HorizontalOptions="Center" FontSize="14"/>
+                </StackLayout>
+                  <Button HorizontalOptions="EndAndExpand" Grid.Column="1" VerticalOptions="Start" Text="{Binding Language[Forgot_Password]}" Command="{Binding CommonNavigationCommand}" CommandParameter="ForgotPassword" BackgroundColor="Transparent" TextColor="#a2a2a2" />
+                </Grid>
+               
+              <Button  Grid.Row="3" Text="{Binding Language[Login_Button_Text]}" BorderRadius="28" Command="{Binding UserLoginCommand}" VerticalOptions="Center" BackgroundColor="#75dfa8" TextColor="White"   />
+                <Button  Grid.Row="4" Text="{Binding Language[Login_Button_Text]}" BorderRadius="28" Command="{Binding UserLoginCommand}" VerticalOptions="Center" BackgroundColor="#017aff"  TextColor="White" />
+                
+               <Image  Grid.Row="5" Source="IcoScanFinger" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="50" HeightRequest="50" >
+                 <Image.GestureRecognizers>
+                          <TapGestureRecognizer
+                          Command="{Binding FingureAuthenticateCommand}"/>
+                        </Image.GestureRecognizers>
+               </Image>
+              <Grid Grid.Row="6" VerticalOptions="EndAndExpand">
+                 <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                 <ColumnDefinition Width=".3*" />
+                 <ColumnDefinition Width="auto" />
+                 <ColumnDefinition Width=".3*" />
+                 <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                   <StackLayout Orientation="Vertical">
+                         <StackLayout.GestureRecognizers>
+                          <TapGestureRecognizer
+                          Command="{Binding UserLoginCommonCommand}" CommandParameter="CreateAccount"/>
+                        </StackLayout.GestureRecognizers>
+                       <Image Source="property" Aspect="AspectFit" VerticalOptions="End" HeightRequest="50" WidthRequest="50"/>
+                       <Label TextColor="#a2a2a2" VerticalTextAlignment="Center" Text="{Binding Language[SR]}" HorizontalOptions="Center" FontSize="12"/>
+                        </StackLayout>
+                     <StackLayout Orientation="Vertical" Grid.Column="2">
+                         <StackLayout.GestureRecognizers>
+                          <TapGestureRecognizer
+                           Command="{Binding UserLoginCommonCommand}" CommandParameter="QuickPay"/>
+                        </StackLayout.GestureRecognizers>
+                       <Image Source="agent" Aspect="AspectFit" VerticalOptions="End"  HeightRequest="50" WidthRequest="50"/>
+                       <Label TextColor="#a2a2a2" VerticalTextAlignment="Center" Text="{Binding Language[PS]}" HorizontalOptions="Center" FontSize="12"/>
+                     </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="4" >
+                         <StackLayout.GestureRecognizers>
+                          <TapGestureRecognizer
+                          Command="{Binding UserLoginCommonCommand}" CommandParameter="UpdateOwnership"/>
+                        </StackLayout.GestureRecognizers>
+                    <Image Source="journey" Aspect="AspectFit" VerticalOptions="End"  HeightRequest="50" WidthRequest="50"/>
+                 <Label TextColor="#a2a2a2" VerticalTextAlignment="Center" Text="{Binding Language[Benefits]}" HorizontalOptions="Center" FontSize="12"/>
+                     </StackLayout>
+                </Grid>
+
+            </Grid>
+      </Grid>
+    </ContentPage.Content>
+</ContentPage>
