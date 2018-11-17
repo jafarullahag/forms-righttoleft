@@ -12,9 +12,9 @@
             <RowDefinition Height="5" />
         </Grid.RowDefinitions>
            <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="10" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="10" />
         </Grid.ColumnDefinitions>
        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Padding="0,20,0,0">
                 <Label Text="{Binding Language[Language]}" TextColor="#fc453a"  FontSize="14">
@@ -73,37 +73,35 @@
                </Image>
               <Grid Grid.Row="6" VerticalOptions="EndAndExpand">
                  <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                 <ColumnDefinition Width=".3*" />
-                 <ColumnDefinition Width="auto" />
-                 <ColumnDefinition Width=".3*" />
-                 <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                 <ColumnDefinition Width="5" />
+                 <ColumnDefinition Width="*" />
+                 <ColumnDefinition Width="5" />
+                 <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                   <StackLayout Orientation="Vertical">
-                         <StackLayout.GestureRecognizers>
-                          <TapGestureRecognizer
-                          Command="{Binding UserLoginCommonCommand}" CommandParameter="CreateAccount"/>
-                        </StackLayout.GestureRecognizers>
-                       <Image Source="property" Aspect="AspectFit" VerticalOptions="End" HeightRequest="50" WidthRequest="50"/>
-                       <Label TextColor="#a2a2a2" VerticalTextAlignment="Center" Text="{Binding Language[SR]}" HorizontalOptions="Center" FontSize="12"/>
-                        </StackLayout>
-                     <StackLayout Orientation="Vertical" Grid.Column="2">
+                  
+
+                   <Button  Grid.Column="0" Text="{Binding Language[SR]}" HeightRequest="100" BorderRadius="10" Command="{Binding UserLoginCommand}" VerticalOptions="Center" BackgroundColor="#ff6600" TextColor="White"   /> 
+                    <Button  Grid.Column="2" Text="{Binding Language[PS]}" HeightRequest="100" BorderRadius="10" Command="{Binding UserLoginCommand}" VerticalOptions="Center" BackgroundColor="#99bf00" TextColor="White"   /> 
+                    <Button  Grid.Column="4" Text="{Binding Language[Benefits]}" HeightRequest="100" BorderRadius="10" Command="{Binding UserLoginCommand}" VerticalOptions="Center" BackgroundColor="#ff0099" TextColor="White"   /> 
+                    
+                    <!-- <StackLayout Orientation="Vertical" Grid.Column="2" BackgroundColor="#99bf00">
                          <StackLayout.GestureRecognizers>
                           <TapGestureRecognizer
                            Command="{Binding UserLoginCommonCommand}" CommandParameter="QuickPay"/>
                         </StackLayout.GestureRecognizers>
-                       <Image Source="agent" Aspect="AspectFit" VerticalOptions="End"  HeightRequest="50" WidthRequest="50"/>
+                       
                        <Label TextColor="#a2a2a2" VerticalTextAlignment="Center" Text="{Binding Language[PS]}" HorizontalOptions="Center" FontSize="12"/>
                      </StackLayout>
 
-                    <StackLayout Orientation="Vertical" Grid.Column="4" >
+                    <StackLayout Orientation="Vertical" Grid.Column="4" BackgroundColor="#ff0099" >
                          <StackLayout.GestureRecognizers>
                           <TapGestureRecognizer
                           Command="{Binding UserLoginCommonCommand}" CommandParameter="UpdateOwnership"/>
                         </StackLayout.GestureRecognizers>
-                    <Image Source="journey" Aspect="AspectFit" VerticalOptions="End"  HeightRequest="50" WidthRequest="50"/>
+                    
                  <Label TextColor="#a2a2a2" VerticalTextAlignment="Center" Text="{Binding Language[Benefits]}" HorizontalOptions="Center" FontSize="12"/>
-                     </StackLayout>
+                     </StackLayout>-->
                 </Grid>
 
             </Grid>
