@@ -1,7 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Custom.RTL" x:Class="Custom.RTL.MainPage">
-    <StackLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ ios:Page.UseSafeArea="true" BackgroundImage="Menu_Background"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Custom.RTL" x:Class="Custom.RTL.MainPage">
+    <Grid>
+        <Grid.Padding>
+   <OnPlatform x:TypeArguments="Thickness">
+     <On Platform="iOS, WinPhone">0</On>
+     <On Platform="Android">0,20,0,0</On>
+    </OnPlatform>
+  </Grid.Padding>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <Image Source="icon_back.png" Grid.Column="0" HeightRequest="24" Rotation="{Binding BackImageRotation}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackTappedCommand}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+        <Image x:Name="ImageLogo" Grid.Row="1" Grid.Column="1" Source="Change_Image_Avatar" VerticalOptions="Center" HorizontalOptions="Center" />
+    </Grid>
 </ContentPage>

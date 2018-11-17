@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Input;
 using Custom.RTL.Common;
 using Xamarin.Forms;
 using static Custom.RTL.Common.GlobalEnum;
@@ -33,6 +34,8 @@ namespace Custom.RTL.ViewModel.Base
                 }
             };
         }
+
+        public double BackImageRotation { get { return FlowDirection == FlowDirection.RightToLeft ? 180 : 0; } }
 
         private Page _page;
         public Page Page
@@ -100,6 +103,21 @@ namespace Custom.RTL.ViewModel.Base
 
                     OnPropertyChanged("VisualElement");
                 }
+            }
+        }
+
+        ICommand  _backTapped;
+        public ICommand BackTappedCommand
+        {
+            get
+            {
+                return _backTapped
+                       ?? (_backTapped = new Command(
+                           () =>
+                           {
+                               Page.Navigation.PopAsync(animated: true);
+                           }
+                           ));
             }
         }
     }

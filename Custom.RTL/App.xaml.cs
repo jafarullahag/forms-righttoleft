@@ -15,7 +15,7 @@ namespace Custom.RTL
         {
             InitializeComponent();
             SetLanguage();
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         private static void SetLanguage()

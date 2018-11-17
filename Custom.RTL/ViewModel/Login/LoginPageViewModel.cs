@@ -42,6 +42,15 @@ namespace Custom.RTL.ViewModel.Login
             }
         }
 
+        Command userLoginCommand;
+        public Command UserLoginCommand
+        {
+            get
+            {
+                return userLoginCommand ?? (userLoginCommand = new Command(() => ExecuteLogin()));
+            }
+        }
+
         void ExecuteOnRemeberMe()
         {
             IsRememberMe = !IsRememberMe;
@@ -62,9 +71,12 @@ namespace Custom.RTL.ViewModel.Login
                 CommonHelper.ChangeLanguage(LanguageShortCode.ar);
                 isArabic = true;
             }
-            //LangResourceLoader.NullifySingleton();
             DependencyService.Get<IFileHelper>().SaveUserLanguagePreference(isArabic);
-            //Application.Current.MainPage = new NavigationPage(new LoginPage());
+        }
+
+        private void ExecuteLogin()
+        {
+            Page.Navigation.PushAsync(new MainPage());
         }
     }
 }

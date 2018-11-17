@@ -164,15 +164,15 @@
     <BundleResource Include="Resources\Checkbox%402x.png" />
     <BundleResource Include="Resources\CheckboxSelected.png" />
     <BundleResource Include="Resources\CheckboxSelected%402x.png" />
-    <BundleResource Include="Resources\agent.png" />
-    <BundleResource Include="Resources\agent%402x.png" />
-    <BundleResource Include="Resources\agent%403x.png" />
-    <BundleResource Include="Resources\journey.png" />
-    <BundleResource Include="Resources\journey%402x.png" />
-    <BundleResource Include="Resources\journey%403x.png" />
-    <BundleResource Include="Resources\property.png" />
-    <BundleResource Include="Resources\property%402x.png" />
-    <BundleResource Include="Resources\property%403x.png" />
+    <BundleResource Include="Resources\Change_Image_Avatar.png" />
+    <BundleResource Include="Resources\Menu_Background.png" />
+    <BundleResource Include="Resources\questionsicon.png" />
+    <BundleResource Include="Resources\reportsicon.png" />
+    <BundleResource Include="Resources\settingsicon.png" />
+    <BundleResource Include="Resources\IcoScanFinger.png" />
+    <BundleResource Include="Resources\icon_back.png" />
+    <BundleResource Include="Resources\icon_back%402x.png" />
+    <BundleResource Include="Resources\icon_back%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DependencyServices\" />

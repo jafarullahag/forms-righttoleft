@@ -88,9 +88,12 @@
     <AndroidResource Include="Resources\drawable-hdpi\Checkbox.png" />
     <AndroidResource Include="Resources\drawable-hdpi\CheckboxSelected.png" />
     <AndroidResource Include="Resources\drawable-hdpi\IcoScanFinger.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\agent.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\journey.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\property.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Change_Image_Avatar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Menu_Background.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\questionsicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\reportsicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\settingsicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_back.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

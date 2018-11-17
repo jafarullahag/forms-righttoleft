@@ -30,7 +30,6 @@ namespace Custom.RTL.iOS.DependencyServices
 
         public void SetLocale(CultureInfo ci)
         {
-            //Thread.CurrentThread.CurrentCulture = ci;
             Thread.CurrentThread.CurrentUICulture = ci;
         }
     }
